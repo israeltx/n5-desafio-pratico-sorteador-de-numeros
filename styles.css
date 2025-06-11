@@ -69,9 +69,65 @@ select {
 /* TYPOGRAPHY */
 :root {
   /* Font Family */
+  --sora-family: "Sora", sans-serif;
+  --roboto-mono-family: "Roboto Mono", monospace;
+  --roboto-flex-family: "Roboto Flex", sans-serif;
+
   /* Font Sizes */
+  --fs-72: 4.5rem;
+  --fs-40: 2.5rem;
+  --fs-32: 2rem;
+  --fs-20: 1.25rem;
+  --fs-16: 1rem;
+  --fs-12: 0.75rem;
+
   /* Font Weights */
-  --h1: var(--fw-xbold) var(--fs-24)/1.32 var(--archivo-ff);
+  --fw-extra-bold: 800; 
+  --fw-bold: 700; 
+  --fw-medim: 500; 
+
+  /* Line Heights */
+  --flh-130: 130;
+  --flh-150: ;
+  
+  /* Font Combinations */
+  /* General */
+  .display-large, .display-medium, .display-small, .overline {
+    text-transform: uppercase;
+  }
+  
+  /* Display Typography */
+  .display-large {
+    font: var(--fw-extra-bold) var(--fs-72)/var(--flh-130) var(--sora-family);
+  }
+  .display-medium {
+    font: var(--fw-extra-bold) var(--fs-40)/var(--flh-130) var(--sora-family);
+  }
+  .display-small {
+    font: var(--fw-bold) var(--fs-32)/var(--flh-130) var(--sora-family);
+  }
+  .overline {
+    font: var(--fw-bold) var(--fs-16)/var(--flh-150) var(--roboto-mono-family)
+  }
+
+  /* Paragraphs Typography*/
+  .paragraph-large {
+    font: var(--fw-medim) var(--fs-16)var(--flh-150) var(--roboto-flex-family)
+  }
+  .paragraph-medium {
+    font: var(--fw-medim) var(--fs-14)var(--flh-150) var(--roboto-flex-family)
+  }
+  .paragraph-small {
+    font: var(--fw-medim) var(--fs-12)var(--flh-150) var(--roboto-flex-family)
+  }
+
+  /* Labels Typography*/
+  .label-medium {
+    font: var(--fw-bold) var(--fs-20)var(--flh-150) var(--roboto-flex-family)
+  }
+  .label-small {
+    font: var(--fw-bold) var(--fs-16)var(--flh-150) var(--roboto-flex-family)
+  }
 }
 
 /* LAYOUT */
