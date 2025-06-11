@@ -79,6 +79,7 @@ select {
   --fs-32: 2rem;
   --fs-20: 1.25rem;
   --fs-16: 1rem;
+  --fs-14: 0.875rem;
   --fs-12: 0.75rem;
 
   /* Font Weights */
@@ -87,12 +88,12 @@ select {
   --fw-medim: 500; 
 
   /* Line Heights */
-  --flh-130: 130;
-  --flh-150: ;
+  --flh-130: 1.30;
+  --flh-150: 1.50;
   
   /* Font Combinations */
   /* General */
-  .display-large, .display-medium, .display-small, .overline {
+  .display-large, .display-medium, .display-small, .overline, .label-large, .label-medium {
     text-transform: uppercase;
   }
   
@@ -112,21 +113,21 @@ select {
 
   /* Paragraphs Typography*/
   .paragraph-large {
-    font: var(--fw-medim) var(--fs-16)var(--flh-150) var(--roboto-flex-family)
+    font: var(--fw-medim) var(--fs-16)/var(--flh-150) var(--roboto-flex-family)
   }
   .paragraph-medium {
-    font: var(--fw-medim) var(--fs-14)var(--flh-150) var(--roboto-flex-family)
+    font: var(--fw-medim) var(--fs-14)/var(--flh-150) var(--roboto-flex-family)
   }
   .paragraph-small {
-    font: var(--fw-medim) var(--fs-12)var(--flh-150) var(--roboto-flex-family)
+    font: var(--fw-medim) var(--fs-12)/var(--flh-150) var(--roboto-flex-family)
   }
 
   /* Labels Typography*/
-  .label-medium {
-    font: var(--fw-bold) var(--fs-20)var(--flh-150) var(--roboto-flex-family)
+  .label-large {
+    font: var(--fw-bold) var(--fs-20)/var(--flh-150) var(--roboto-flex-family)
   }
-  .label-small {
-    font: var(--fw-bold) var(--fs-16)var(--flh-150) var(--roboto-flex-family)
+  .label-medium {
+    font: var(--fw-bold) var(--fs-16)/var(--flh-150) var(--roboto-flex-family)
   }
 }
 
@@ -147,9 +148,9 @@ select {
 
 /* Utility Classes */
 .container {
-  max-width: 375px;
+  max-width: 390px;
   margin: auto;
-  padding: 20px;
+  padding: var(--s32);
 }
 
 .desktop-only { display: none; }
