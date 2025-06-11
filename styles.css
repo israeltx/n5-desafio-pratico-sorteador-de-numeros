@@ -51,7 +51,7 @@ select {
   --background-seconday: #111012;
   --background-tertiary: #24222E;
   --background-brand: #C58DE7;
-  background-gray: #3D3D3D;
+  --background-gray: #3D3D3D;
   
   /* Accent Colors */
   --ccent-pink: #D586E0;
