@@ -1,0 +1,82 @@
+/* RESET */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* COLORS */
+:root {
+  
+}
+
+/* TYPOGRAPHY */
+:root {
+  /* Font Family */
+  /* Font Sizes */
+  /* Font Weights */
+  --h1: var(--fw-xbold) var(--fs-24)/1.32 var(--archivo-ff);
+}
+
+/* LAYOUT */
+:root {
+  --s4: 0.25rem;
+  --s8: 0.5rem;
+  --s10: 0.625rem;
+  --s12: 0.75rem;
+  --s14: 0.875rem;
+  --s16: 1rem;
+  --s20: 1.25rem;
+  --s24: 1.5rem;
+  --s28: 1.75rem;
+  --s32: 2rem;
+  --s48: 3rem;
+}
+
+/* Utility Classes */
+.container {
+  max-width: 375px;
+  margin: auto;
+  padding: 20px;
+}
+
+.desktop-only { display: none; }
+.mobile-only { display: initial; }
+
+@media (width > 375px) {
+  .container {
+    max-width: 1440px;
+  }
+}
