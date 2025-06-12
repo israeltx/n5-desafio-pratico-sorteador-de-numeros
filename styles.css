@@ -193,6 +193,7 @@ select {
   --s40: 2.5rem;
   --s44: 2.75rem;
   --s48: 3rem;
+  --s70: 4.375rem;
 }
 
 /* Utility Classes */
@@ -325,6 +326,7 @@ button {
   width: 100%;
 
   padding: var(--s16);
+  margin-bottom: var(--s70);
   border-radius: 8px;
 
   background-color: var(--background-tertiary);
