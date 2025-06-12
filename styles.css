@@ -251,26 +251,53 @@ fieldset {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 85px;
 
   & label {
     margin-bottom: var(--s8);
+    transition: color 100ms;
+  }
+  &:hover {
+    label {
+      color: var(--background-brand);
+    }
   }
 
   & input {
     text-align: center;
     border: none;
 
+    border: 2px solid transparent;
+
     background-color: var(--background-tertiary);
     color: var(--content-primary);
 
-    width: 86px;
-    height: 56px;
+    width: 85px;
+    height: 55px;
     border-radius: 8px;
 
     /* Remove the default arrows on the side */
     &::-webkit-outer-spin-button, &::-webkit-inner-spin-button {
       -webkit-appearance: none;
       margin: 0;
+    }
+
+    /* Add the gradient for hover, focus and active states */
+    &:hover, &:focus, &:active {
+      /* Reset the styling */
+      outline: none;
+      
+      background-image:
+      linear-gradient(var(--background-tertiary), var(--background-tertiary)),
+      linear-gradient(90deg,
+        #77C0AF 0%,
+        #D1DC97 14.84%,
+        #E9A9B3 32.15%,
+        #D586E0 65.79%,
+        #91A1FA 84.58%);
+      background-origin: border-box;
+      background-clip: padding-box, border-box;
+      border: 2px solid transparent;
     }
   }
 }
