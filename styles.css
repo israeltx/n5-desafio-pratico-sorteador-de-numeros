@@ -240,3 +240,8 @@ form {
   margin: 0 auto;
   margin-bottom: var(--s44);
 }
+
+/* Form Component */
+fieldset {
+  border: none;
+}
