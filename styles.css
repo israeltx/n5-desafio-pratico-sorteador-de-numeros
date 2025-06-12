@@ -61,9 +61,15 @@ select {
   --accent-red: #E9A9B3;
 
   /* Gradients */
-  --gradient-border: linear-gradient(#77C0AF 0%, #D1DC97 14.84%, #E9A9B3 32.15%, #D586E0 65.79%, #91A1FA 84.58%);
-  --gradient-background: linear-gradient(#D586E0 0%, #91A1FA 98.93%);
-  /* --gradient-content: linear-gradient(#C7C9CCB3 0%, #3D3D3DB3 100%); */
+  --gradient-border: linear-gradient(
+    #77C0AF 0%, 
+    #D1DC97 14.84%, 
+    #E9A9B3 32.15%,
+    #D586E0 65.79%,
+    #91A1FA 84.58%);
+  --gradient-background: linear-gradient(
+    #D586E0 0%,
+    #91A1FA 98.93%);
   --gradient-content: linear-gradient(
     rgba(0, 0, 0, 0.75) 100%,
     transparent 100%
@@ -71,10 +77,21 @@ select {
 
   body {
     min-height: 100vh;
+    color: var(--content-primary);
 
     background-image: 
       var(--gradient-content), 
       url('assets/images/background.png');
+  }
+
+  h3 {
+    color: var(--content-brand);
+  }
+  .paragraph-small {
+    color: var(--content-secondary);
+  }
+  button {
+    color: var(--content-primary);
   }
 }
 
