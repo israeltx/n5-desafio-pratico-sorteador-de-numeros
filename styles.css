@@ -306,3 +306,18 @@ fieldset {
   }
 }
 
+/* Button Component */
+button {
+  border: none;
+
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  
+  width: 100%;
+
+  padding: var(--s16);
+  border-radius: 8px;
+  
+  background-color: var(--background-tertiary);
+}
