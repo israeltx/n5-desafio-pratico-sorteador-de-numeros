@@ -172,6 +172,7 @@ select {
   --s24: 1.5rem;
   --s28: 1.75rem;
   --s32: 2rem;
+  --s44: 2.75rem;
   --s48: 3rem;
 }
 
@@ -179,7 +180,7 @@ select {
 .container {
   max-width: 390px;
   margin: auto;
-  padding: var(--s32);
+  padding: var(--s44) var(--s32);
 }
 
 .desktop-only { display: none; }
