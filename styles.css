@@ -37,6 +37,8 @@ select {
   font: inherit;
 }
 
+
+
 /* COLORS */
 :root {
   /* Content Colors */
@@ -87,13 +89,28 @@ select {
   h3 {
     color: var(--content-brand);
   }
+
   .paragraph-small {
     color: var(--content-secondary);
   }
+
   button {
     color: var(--content-primary);
   }
+
+  .overline {
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.85) 0%,
+      rgba(255, 255, 255, 0.30) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
 }
+
+
 
 /* TYPOGRAPHY */
 :root {
