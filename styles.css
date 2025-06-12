@@ -172,6 +172,7 @@ select {
   --s24: 1.5rem;
   --s28: 1.75rem;
   --s32: 2rem;
+  --s36: 2.25rem;
   --s44: 2.75rem;
   --s48: 3rem;
 }
@@ -180,7 +181,7 @@ select {
 .container {
   max-width: 390px;
   margin: auto;
-  padding: var(--s44) var(--s32);
+  padding: var(--s44) var(--s36);
 }
 
 .desktop-only { display: none; }
@@ -190,4 +191,12 @@ select {
   .container {
     max-width: 1336px;
   }
+}
+
+
+/* COMPONENTS */
+/* Logo Component */
+#logo {
+  margin: 0 auto;
+  margin-bottom: var(--s44);
 }
