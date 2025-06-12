@@ -150,7 +150,7 @@ select {
   .display-medium {
     font: var(--fw-extra-bold) var(--fs-40)/var(--flh-130) var(--sora-family);
   }
-  .display-small {
+  .display-small, input {
     font: var(--fw-bold) var(--fs-32)/var(--flh-130) var(--sora-family);
   }
   .overline {
@@ -245,3 +245,33 @@ form {
 fieldset {
   border: none;
 }
+
+/* Number Field Component */
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  & label {
+    margin-bottom: var(--s8);
+  }
+
+  & input {
+    text-align: center;
+    border: none;
+
+    background-color: var(--background-tertiary);
+    color: var(--content-primary);
+
+    width: 86px;
+    height: 56px;
+    border-radius: 8px;
+
+    /* Remove the default arrows on the side */
+    &::-webkit-outer-spin-button, &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+}
+
