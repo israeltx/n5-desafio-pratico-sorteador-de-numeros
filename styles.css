@@ -244,6 +244,10 @@ form {
 /* Form Component */
 fieldset {
   border: none;
+  display: flex;
+  justify-content: center;
+  gap: var(--s12);
+  margin-bottom: var(--s20);
 }
 
 /* Number Field Component */
@@ -286,7 +290,7 @@ fieldset {
     &:hover, &:focus, &:active {
       /* Reset the styling */
       outline: none;
-      
+
       background-image:
       linear-gradient(var(--background-tertiary), var(--background-tertiary)),
       linear-gradient(90deg,
