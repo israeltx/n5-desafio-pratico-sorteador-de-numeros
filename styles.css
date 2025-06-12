@@ -54,16 +54,28 @@ select {
   --background-gray: #3D3D3D;
   
   /* Accent Colors */
-  --ccent-pink: #D586E0;
-  --ccent-blue: #91A1FA;
-  --ccent-green: #77C0A;
-  --ccent-lime: #D1DC97;
-  --ccent-red: #E9A9B3;
+  --accent-pink: #D586E0;
+  --accent-blue: #91A1FA;
+  --accent-green: #77C0A;
+  --accent-lime: #D1DC97;
+  --accent-red: #E9A9B3;
 
   /* Gradients */
   --gradient-border: linear-gradient(#77C0AF 0%, #D1DC97 14.84%, #E9A9B3 32.15%, #D586E0 65.79%, #91A1FA 84.58%);
   --gradient-background: linear-gradient(#D586E0 0%, #91A1FA 98.93%);
-  --gradient-content: linear-gradient(#C7C9CC 0%, #3D3D3D 100%);
+  /* --gradient-content: linear-gradient(#C7C9CCB3 0%, #3D3D3DB3 100%); */
+  --gradient-content: linear-gradient(
+    rgba(0, 0, 0, 0.75) 100%,
+    transparent 100%
+  );
+
+  body {
+    min-height: 100vh;
+
+    background-image: 
+      var(--gradient-content), 
+      url('assets/images/background.png');
+  }
 }
 
 /* TYPOGRAPHY */
@@ -156,7 +168,7 @@ select {
 .desktop-only { display: none; }
 .mobile-only { display: initial; }
 
-@media (width > 375px) {
+@media (width > 390px) {
   .container {
     max-width: 1440px;
   }
