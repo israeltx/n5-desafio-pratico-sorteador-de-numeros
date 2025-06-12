@@ -190,6 +190,7 @@ select {
   --s28: 1.75rem;
   --s32: 2rem;
   --s36: 2.25rem;
+  --s40: 2.5rem;
   --s44: 2.75rem;
   --s48: 3rem;
 }
@@ -306,6 +307,13 @@ fieldset {
   }
 }
 
+
+/* Toogle Button Component */
+.toogle-button-wrapper {
+  margin-bottom: var(--s40);
+}
+
+
 /* Button Component */
 button {
   border: none;
@@ -318,6 +326,6 @@ button {
 
   padding: var(--s16);
   border-radius: 8px;
-  
+
   background-color: var(--background-tertiary);
 }
