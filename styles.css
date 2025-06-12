@@ -247,7 +247,7 @@ form {
 fieldset {
   border: none;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   gap: var(--s12);
   margin-bottom: var(--s20);
 }
@@ -278,7 +278,7 @@ fieldset {
     background-color: var(--background-tertiary);
     color: var(--content-primary);
 
-    width: 85px;
+    width: 86px;
     height: 55px;
     border-radius: 8px;
 
@@ -330,4 +330,15 @@ button {
   border-radius: 8px;
 
   background-color: var(--background-tertiary);
+}
+
+
+/* Questions Component */
+#questions {
+  & .question-wrapper {
+    display: flex;
+    align-items: start;
+    gap: 8px;
+    margin-bottom: var(--s36);
+  }
 }
