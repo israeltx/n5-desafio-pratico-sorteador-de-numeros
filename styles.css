@@ -188,6 +188,6 @@ select {
 
 @media (width > 390px) {
   .container {
-    max-width: 1440px;
+    max-width: 1336px;
   }
 }
