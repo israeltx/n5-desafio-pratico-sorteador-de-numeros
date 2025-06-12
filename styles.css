@@ -204,11 +204,23 @@ select {
 .desktop-only { display: none; }
 .mobile-only { display: initial; }
 
+header {
+  margin-bottom: --s;
+    & .overline {
+      margin-bottom: var(--s8);
+  }
+}
+
+h1 {
+  margin-bottom: var(--s44);
+}
+
 @media (width > 390px) {
   .container {
     max-width: 1336px;
   }
 }
+
 
 
 /* COMPONENTS */
