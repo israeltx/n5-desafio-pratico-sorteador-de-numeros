@@ -70,17 +70,35 @@ sortear_button.addEventListener('click', (event) => {
   // Prevent the page from refreshing
   event.preventDefault()
 
-  // Is the toggle button enabled
-  const isToggleButtonOn = getToogleButtonState();
-
   // Check if the numbers quantity input is greater than 0
   checkNumbersQuantityInput()
 
+  // Check if the toggle button enabled
+  const isToggleButtonOn = getToogleButtonState();
+
   // Generate the amount of numbers specified in the "numeros" field
+  // Store the values
   let numbers = []
+  // Loop according to the quantity specified
   for (let i = 0; i < numbers_qty.value; i++) {
-    numbers.push(getRandomNumbers(Number(from_number.value), Number(to_number.value)))
-    console.log('number');
+    // Generate a new number
+    let newNumber = getRandomNumbers(Number(from_number.value), Number(to_number.value))
+    // Check if the toggle button is enabled
+    if (isToggleButtonOn) {
+      // Check if the number is already been used
+      if (numbers.includes(newNumber)) {
+        // Reduce 1 iteration since it was not valid
+        i--
+        // Go to the next iteration
+        continue
+      } else {
+        // Add non-repetitive number
+        numbers.push(newNumber)
+      }
+    } else {
+      // Toggle button not enabled, add any number in the range
+      numbers.push(newNumber)
+    }
   }
 
   
