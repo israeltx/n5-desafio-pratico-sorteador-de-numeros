@@ -448,8 +448,11 @@ button {
     display: flex;
     align-items: start;
     gap: 8px;
-    margin-bottom: var(--s36);
+    &:nth-child(1) {
+      margin-bottom: var(--s36);
+    }
   }
+
 }
 
 @media (width > 390px) {
@@ -470,6 +473,7 @@ button {
     grid-area: draw-form;
     grid-row: 2 / 4;
     width: 482px;
+    align-self: center;
   }
 
   #questions {
@@ -489,5 +493,11 @@ button {
       'main-header draw-form'
       'questions   draw-form';
     max-width: 1336px;
+  }
+  #sortear-button {
+    margin-bottom: 0;
+  }
+  .question-wrapper {
+    width: 396px;
   }
 }

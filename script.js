@@ -3,7 +3,13 @@ const toogle_button = document.getElementById('toogle-button')
 const toogle_span = document.getElementById('toogle-span')
 const h1 = document.querySelector('h1')
 
-
+window.addEventListener('load', (event) => {
+  if (window.innerWidth > 390) {
+    h1.classList.remove('display-medium')
+    h1.classList.add('display-large')
+  }
+  
+})
 
 // Draw Form
 const form = document.querySelector('form')
