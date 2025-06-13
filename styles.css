@@ -237,12 +237,22 @@ form {
 }
 
 /* Form Component */
+#draw-form {
+  p.overline {
+    margin-bottom: 40px;
+  }
+  & .reveal {
+    animation: reveal 2s;
+  }
+}
+
+
 fieldset {
   border: none;
   display: flex;
   justify-content: space-between;
   gap: var(--s12);
-  margin-bottom: var(--s20);
+  margin-bottom: var(--s20);  
 }
 
 /* Number Field Component */
@@ -390,6 +400,14 @@ fieldset {
   }
 }
 
+@keyframes reveal {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
 /* Button Component */
 button {

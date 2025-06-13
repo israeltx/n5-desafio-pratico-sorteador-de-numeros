@@ -4,18 +4,15 @@ const toogle_span = document.getElementById('toogle-span')
 const h1 = document.querySelector('h1')
 
 // Draw Form
+const header = document.querySelector('#content-form header')
 const form = document.querySelector('form')
 const sortear_button = document.getElementById('sortear-button')
 const button_arrow = document.getElementById('button-arrow')
-
-
 
 // Inputs values
 const numbers_qty = document.getElementById('numeros')
 const from_number = document.getElementById('de')
 const to_number = document.getElementById('ate')
-
-// numbers_qty.addEventListener('on')
 
 // LAYOUT
 // Swap h1 classes
@@ -26,6 +23,14 @@ window.addEventListener('load', (event) => {
   }
 })
 
+// Swap #content-form header's content when drawing a number
+function swapHeader() {
+  header.innerHTML = `
+    <h2 class="label-large reveal">Resultado do sorteio:</h2>
+    <p class="overline reveal">1º Resultado</p>
+    <br>
+  `
+}
 
 
 // ANIMATION
@@ -75,6 +80,9 @@ sortear_button.addEventListener('click', (event) => {
 
   // Check if the toggle button enabled
   const isToggleButtonOn = getToogleButtonState();
+
+  // Swap the header for new text when drawing
+  swapHeader();
 
   // Generate the amount of numbers specified in the "numeros" field
   // Store the values
