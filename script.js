@@ -1,6 +1,9 @@
 // Toggle Button
 const toogle_button = document.getElementById('toogle-button')
 const toogle_span = document.getElementById('toogle-span')
+const h1 = document.querySelector('h1')
+
+
 
 // Draw Form
 const form = document.querySelector('form')
