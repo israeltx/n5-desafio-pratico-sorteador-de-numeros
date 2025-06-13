@@ -372,13 +372,13 @@ fieldset {
     left: 0;
   }
   to {
-    left: 3.2%;
+    left: 10px;
   }
 }
 
 @keyframes slide-back {
   from {
-    left: 3.2%;
+    left: 10px;
   }
   to {
     left: 0;
