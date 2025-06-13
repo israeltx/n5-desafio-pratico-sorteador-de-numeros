@@ -54,8 +54,8 @@ toogle_button.addEventListener('click', (event) => {
 })
 
 // Generate a radom number between to values and a x amount of times
-function getRandomNumbers(min, max, qty = 1) {
-  // Get values from inputs
+function getRandomNumbers(min, max) {
+  // Get values from inputs range
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
@@ -66,7 +66,14 @@ sortear_button.addEventListener('click', (event) => {
   // Check if the numbers quantity input is greater than 0
   checkNumbersQuantityInput()
 
-  const randomNumber = getRandomNumbers(Number(from_number.value), Number(to_number.value), Number(numbers_qty.value))
-  console.log(numbers_qty.value, from_number.value, to_number.value, randomNumber);
+  // Generate the amount of numbers specified in the "numeros" field
+  let numbers = []
+  for (let i = 0; i < numbers_qty.value; i++) {
+    numbers.push(getRandomNumbers(Number(from_number.value), Number(to_number.value)))
+    console.log('number');
+  }
+
+  
+  console.log(numbers_qty.value, from_number.value, to_number.value, numbers);
   
 })
