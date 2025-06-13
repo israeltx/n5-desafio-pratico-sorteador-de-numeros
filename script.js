@@ -8,7 +8,12 @@ const form = document.querySelector('form')
 const sortear_button = document.getElementById('sortear-button')
 const button_arrow = document.getElementById('button-arrow')
 
+// Inputs values
+const numbers_qty = document.getElementById('numeros')
+const from_number = document.getElementById('de')
+const to_number = document.getElementById('ate')
 
+// numbers_qty.addEventListener('on')
 
 // LAYOUT
 // Swap h1 classes
@@ -17,7 +22,6 @@ window.addEventListener('load', (event) => {
     h1.classList.remove('display-medium')
     h1.classList.add('display-large')
   }
-
 })
 
 
@@ -28,11 +32,17 @@ sortear_button.addEventListener('mouseover', () => {
   button_arrow.classList.add('arrow-bounce')
 })
 
-// Remove animtaion to the button's arrow icon
+// Remove animation to the button's arrow icon
 sortear_button.addEventListener('mouseout', () => {
   button_arrow.classList.remove('arrow-bouce')
 })
 
+// Check if the numbers quantity is greater than 0
+function checkNumbersQuantityInput() {
+  if (Number(numbers_qty.value) === 0) {
+    return alert('Insira um valor maior que 0 e numérico')
+  }
+}
 
 
 // FUNCTIONALITY
@@ -45,12 +55,18 @@ toogle_button.addEventListener('click', (event) => {
 
 // Generate a radom number between to values and a x amount of times
 function getRandomNumbers(min, max, qty = 1) {
+  // Get values from inputs
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 // Sortear button's functionality
 sortear_button.addEventListener('click', (event) => {
   event.preventDefault()
-  const randomNumber = getRandomNumbers(1, 20)
-  console.log(randomNumber);
+
+  // Check if the numbers quantity input is greater than 0
+  checkNumbersQuantityInput()
+
+  const randomNumber = getRandomNumbers(Number(from_number.value), Number(to_number.value), Number(numbers_qty.value))
+  console.log(numbers_qty.value, from_number.value, to_number.value, randomNumber);
+  
 })
