@@ -313,30 +313,35 @@ fieldset {
 .toogle-button-wrapper {
   display: flex;
   align-items: center;
-  gap: var(--s20);
+  gap: var(--s36);
+  margin-left: 2px;
 
 
   position: relative;
   margin-bottom: var(--s40);
 
-  & .button-wrapper {
-    &:hover {
-      span {
-        transition: background-color 200ms;
-        background-color: var(--background-brand);
-      }
-    }
-  }
-
-  & button {
+  & #toogle-button {
     padding: 0;
     margin: 0;
+
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+    left: 0;
+    z-index: 1;
+
     background-color: var(--content-primary);
     width: 14px;
     height: 14px;
     border-radius: 50%;
-  }
 
+    animation: slide-back .2s;
+
+    &.toogle-button-is-on {
+      animation: slide-in .2s forwards;
+    }
+  }
+ 
   /* Background */
   & span {
     display: block;
@@ -352,8 +357,32 @@ fieldset {
 
     border-radius: 16px;
     background-color: var(--content-tertiary);
+
+    &.toogle-button-is-on {
+      background-color: var(--background-brand);
+      transition: background-color 200ms;
+    }
   }
 
+}
+
+/* Animations */
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+  to {
+    left: 3.2%;
+  }
+}
+
+@keyframes slide-back {
+  from {
+    left: 3.2%;
+  }
+  to {
+    left: 0;
+  }
 }
 
 
