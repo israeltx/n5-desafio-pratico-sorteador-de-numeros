@@ -8,6 +8,8 @@ const form = document.querySelector('form')
 const sortear_button = document.getElementById('sortear-button')
 const button_arrow = document.getElementById('button-arrow')
 
+
+
 // Inputs values
 const numbers_qty = document.getElementById('numeros')
 const from_number = document.getElementById('de')
@@ -53,6 +55,14 @@ toogle_button.addEventListener('click', (event) => {
   toogle_span.classList.toggle('toogle-button-is-on')
 })
 
+function getToogleButtonState(params) {
+  if (toogle_button.classList.contains('toogle-button-is-on')) {
+    return true
+  } else {
+    return false
+  }
+}
+
 // Generate a radom number between to values and a x amount of times
 function getRandomNumbers(min, max) {
   // Get values from inputs range
@@ -61,7 +71,11 @@ function getRandomNumbers(min, max) {
 
 // Sortear button's functionality
 sortear_button.addEventListener('click', (event) => {
+  // Prevent the page from refreshing
   event.preventDefault()
+
+  // Is the toggle button enabled
+  const isToggleButtonOn = getToogleButtonState();
 
   // Check if the numbers quantity input is greater than 0
   checkNumbersQuantityInput()
@@ -74,6 +88,6 @@ sortear_button.addEventListener('click', (event) => {
   }
 
   
-  console.log(numbers_qty.value, from_number.value, to_number.value, numbers);
+  console.log(numbers_qty.value, from_number.value, to_number.value, numbers, isToggleButtonOn);
   
 })
