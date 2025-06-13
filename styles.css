@@ -462,7 +462,8 @@ button {
 
 /* Media Queries */
 @media (width > 390px) {
-  /* Layout */
+
+  /* LAYOUT */
   #content-form {
     display: contents;
   }
@@ -503,5 +504,12 @@ button {
       'main-header draw-form'
       'questions   draw-form';
     max-width: 1336px;
+  }
+
+
+  /* COMPONENTS */
+  /* Form Component */
+  fieldset {
+    justify-content: start;
   }
 }
