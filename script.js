@@ -36,15 +36,21 @@ sortear_button.addEventListener('mouseout', () => {
 
 
 // FUNCTIONALITY
-// Set toogle button's function
+// Set toogle button's function and animation
 toogle_button.addEventListener('click', (event) => {
   event.preventDefault()
   toogle_button.classList.toggle('toogle-button-is-on')
   toogle_span.classList.toggle('toogle-button-is-on')
 })
 
+// Generate a radom number between to values and a x amount of times
+function getRandomNumbers(min, max, qty = 1) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
 // Sortear button's functionality
 sortear_button.addEventListener('click', (event) => {
   event.preventDefault()
+  const randomNumber = getRandomNumbers(1, 20)
+  console.log(randomNumber);
 })
