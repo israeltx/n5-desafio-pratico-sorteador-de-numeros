@@ -56,11 +56,7 @@ toogle_button.addEventListener('click', (event) => {
 })
 
 function getToogleButtonState(params) {
-  if (toogle_button.classList.contains('toogle-button-is-on')) {
-    return true
-  } else {
-    return false
-  }
+  return toogle_button.classList.contains('toogle-button-is-on') ? true : false
 }
 
 // Generate a radom number between to values and a x amount of times
