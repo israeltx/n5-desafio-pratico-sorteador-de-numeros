@@ -385,11 +385,24 @@ fieldset {
   }
 }
 
+@keyframes arrow-bounce {
+  0% {
+    left: 200px;
+  }
+  50% {
+    left: 210px;
+  }
+  100% {
+    left: 200px;
+  }
+}
+
 
 /* Button Component */
 button {
   cursor: pointer;
   border: none;
+  border: 2px solid transparent;
 
   display: flex;
   justify-content: center;
@@ -402,6 +415,37 @@ button {
   border-radius: 8px;
 
   background-color: var(--background-tertiary);
+
+  /* Sortear Button */
+  &#sortear-button {
+    position: relative;
+    & img {
+      position: absolute;
+      left: 200px;
+    }
+
+    /* Add the gradient for the hover state */
+    &:hover {
+      /* Reset the styling */
+      outline: none;
+
+      background-image:
+      linear-gradient(var(--background-tertiary), var(--background-tertiary)),
+      linear-gradient(90deg,
+        #77C0AF 0%,
+        #D1DC97 14.84%,
+        #E9A9B3 32.15%,
+        #D586E0 65.79%,
+        #91A1FA 84.58%);
+      background-origin: border-box;
+      background-clip: padding-box, border-box;
+      border: 2px solid transparent;
+      /* Arrow Icon */
+        & .arrow-bounce {
+          animation: arrow-bounce .8s infinite;
+        }
+      }
+    }
 }
 
 
