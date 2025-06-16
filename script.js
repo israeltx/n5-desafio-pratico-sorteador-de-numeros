@@ -7,6 +7,7 @@ const h1 = document.querySelector('h1')
 const header = document.querySelector('#content-form header')
 const form = document.querySelector('form')
 const sortear_button = document.getElementById('sortear-button')
+const sortear_button_p = document.querySelector('#sortear-button p')
 const button_arrow = document.getElementById('button-arrow')
 
 // Inputs values
@@ -14,14 +15,10 @@ const numbers_qty = document.getElementById('numeros')
 const from_number = document.getElementById('de')
 const to_number = document.getElementById('ate')
 
-// LAYOUT
-// Swap h1 classes
-window.addEventListener('load', (event) => {
-  if (window.innerWidth > 390) {
-    h1.classList.remove('display-medium')
-    h1.classList.add('display-large')
-  }
-})
+
+
+// FUNCTIONALITY
+// Functions
 
 // Swap #content-form header's content when drawing a number
 function swapHeader() {
@@ -31,44 +28,68 @@ function swapHeader() {
     <br>
   `
 }
-
-
-// ANIMATION
-// Add animtaion to the button's arrow icon
-sortear_button.addEventListener('mouseover', () => {
-  button_arrow.classList.add('arrow-bounce')
-})
-
-// Remove animation to the button's arrow icon
-sortear_button.addEventListener('mouseout', () => {
-  button_arrow.classList.remove('arrow-bouce')
-})
-
 // Check if the numbers quantity is greater than 0
 function checkNumbersQuantityInput() {
   if (Number(numbers_qty.value) === 0) {
     return alert('Insira um valor maior que 0 e numérico')
   }
 }
+function swapButton() {
+  // Change buttons inner p apperance
+  // sortear_button.innerText = 'Sortear novamente'
+  sortear_button_p.innerText = 'Sortear novamente'
+  // Change button's img
+  button_arrow.attributes[0].textContent = 'assets/icons/draw.svg'
+  // Remove previous animation
+  button_arrow.classList.remove('arrow-bounce')
+  // Apply styling class for layout and animation
+  button_arrow.classList.add('sortear-novamente')
+}
+// Check if the toogle button is on for non-repetitive numbrers
+function getToogleButtonState() {
+  return toogle_button.classList.contains('toogle-button-is-on') ? true : false
+}
+// Generate a radom number between two values
+function getRandomNumbers(min, max) {
+  // Get values from inputs range
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
 
-// FUNCTIONALITY
+
+// EVENT LISTENERS
+
+// ANIMATION
+// Add animtaion to the button's arrow icon
+sortear_button.addEventListener('mouseover', () => {
+  // Check the button's inner text for appropriate animation
+  if (sortear_button.innerText === 'SORTEAR') {
+    // Apply "sortear" animation
+    button_arrow.classList.add('arrow-bounce')
+  } else {
+    // Apply "sortear nonvamente animation"
+    button_arrow.classList.add('sortear-novamente')
+  }
+})
+// Remove animation to the button's arrow icon
+sortear_button.addEventListener('mouseout', () => {
+  button_arrow.classList.remove('arrow-bouce')
+})
+
+// Swap h1 classes for desktop screens
+window.addEventListener('load', (event) => {
+  if (window.innerWidth > 390) {
+    h1.classList.remove('display-medium')
+    h1.classList.add('display-large')
+  }
+})
+
 // Set toogle button's function and animation
 toogle_button.addEventListener('click', (event) => {
   event.preventDefault()
   toogle_button.classList.toggle('toogle-button-is-on')
   toogle_span.classList.toggle('toogle-button-is-on')
 })
-
-function getToogleButtonState(params) {
-  return toogle_button.classList.contains('toogle-button-is-on') ? true : false
-}
-
-// Generate a radom number between to values and a x amount of times
-function getRandomNumbers(min, max) {
-  // Get values from inputs range
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
 
 // Sortear button's functionality
 sortear_button.addEventListener('click', (event) => {
@@ -83,6 +104,9 @@ sortear_button.addEventListener('click', (event) => {
 
   // Swap the header for new text when drawing
   swapHeader();
+  // Swap button's inner text and icon
+  swapButton();
+
 
   // Generate the amount of numbers specified in the "numeros" field
   // Store the values
@@ -109,7 +133,5 @@ sortear_button.addEventListener('click', (event) => {
     }
   }
 
-  
   console.log(numbers_qty.value, from_number.value, to_number.value, numbers, isToggleButtonOn);
-  
 })

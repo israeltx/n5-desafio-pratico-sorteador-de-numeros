@@ -412,6 +412,15 @@ fieldset {
   }
 }
 
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 /* Button Component */
 button {
   cursor: pointer;
@@ -439,6 +448,11 @@ button {
       position: absolute;
       top: 0;
       left: 80px;
+      /* When you need to draw another random numbers iteration */
+      &.sortear-novamente {
+        /* border: 1px solid yellow; */
+        left: 185px;
+      }
     }
 
     /* Add the gradient for the hover state */
@@ -460,6 +474,9 @@ button {
       /* Arrow Icon */
         & .arrow-bounce {
           animation: arrow-bounce .8s infinite;
+        }
+        & .sortear-novamente {
+          animation: rotate 1.5s infinite;
         }
       }
     }
