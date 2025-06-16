@@ -39,9 +39,7 @@ function swapHeader() {
 }
 // Check if the numbers quantity is greater than 0
 function checkNumbersQuantityInput() {
-  if (Number(numbers_qty.value) === 0) {
-    return alert('Insira um valor maior que 0 e numérico')
-  }
+  return Number(numbers_qty.value) === 0 ? true : false
 }
 function swapButton() {
   // Change buttons inner p apperance
@@ -101,7 +99,7 @@ sortear_button.addEventListener('mouseout', () => {
 })
 
 // Swap h1 classes for desktop screens
-window.addEventListener('load', (event) => {
+window.addEventListener('load', () => {
   if (window.innerWidth > 390) {
     h1.classList.remove('display-medium')
     h1.classList.add('display-large')
@@ -109,7 +107,7 @@ window.addEventListener('load', (event) => {
 })
 
 // Set toogle button's function and animation
-toogle_button.addEventListener('click', (event) => {
+toogle_button.addEventListener('click', () => {
   event.preventDefault()
   toogle_button.classList.toggle('toogle-button-is-on')
   toogle_span.classList.toggle('toogle-button-is-on')
@@ -121,7 +119,9 @@ sortear_button.addEventListener('click', (event) => {
   event.preventDefault()
 
   // Check if the numbers quantity input is greater than 0
-  checkNumbersQuantityInput()
+  if (checkNumbersQuantityInput()) {
+    return alert('Insira um valor maior que 0 e numérico')
+  }
 
   // Check if the toggle button enabled
   const isToggleButtonOn = getToogleButtonState();
