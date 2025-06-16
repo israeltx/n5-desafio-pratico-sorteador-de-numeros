@@ -1,9 +1,11 @@
 // Toggle Button
+const toogle_button_wrapper = document.getElementsByClassName('toogle-button-wrapper')
 const toogle_button = document.getElementById('toogle-button')
 const toogle_span = document.getElementById('toogle-span')
 const h1 = document.querySelector('h1')
 
 // Draw Form
+const fieldset = document.querySelector('fieldset')
 const header = document.querySelector('#content-form header')
 const form = document.querySelector('form')
 const sortear_button = document.getElementById('sortear-button')
@@ -15,7 +17,7 @@ const numbers_qty = document.getElementById('numeros')
 const from_number = document.getElementById('de')
 const to_number = document.getElementById('ate')
 
-
+console.log(fieldset);
 
 // FUNCTIONALITY
 // Functions
@@ -27,6 +29,10 @@ function swapHeader() {
     <p class="overline reveal">1º Resultado</p>
     <br>
   `
+  // Hide toogle button
+  toogle_button_wrapper[0].remove()
+  // Hide form
+  fieldset.remove()
 }
 // Check if the numbers quantity is greater than 0
 function checkNumbersQuantityInput() {
