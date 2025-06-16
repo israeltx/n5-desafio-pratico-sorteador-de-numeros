@@ -24,11 +24,13 @@ const draw_numbers_wrapper = document.getElementById('draw-numbers-wrapper')
 // FUNCTIONALITY
 // Functions
 
+let numberOfDrawnNumbersIterations = 0
+
 // Swap #content-form header's content when drawing a number
 function swapHeader() {
   header.innerHTML = `
     <h2 class="label-large reveal">Resultado do sorteio:</h2>
-    <p class="overline reveal">1º Resultado</p>
+    <p class="overline reveal">${numberOfDrawnNumbersIterations}º Resultado</p>
     <br>
   `
   // Hide toogle button
@@ -90,7 +92,8 @@ function getXAmountOfRandomNumbers() {
       numbers.push(newNumber)
     }
   }
-  console.log(numbers);
+  // Add to the global count of iterations
+  numberOfDrawnNumbersIterations++
   return numbers  
 }
 // Add generated number to the grid
