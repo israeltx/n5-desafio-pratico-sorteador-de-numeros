@@ -108,6 +108,10 @@ select {
     background-clip: text;
     color: transparent;
   }
+
+  .new-number {
+    color: var(--content-brand);
+  }
 }
 
 
@@ -121,6 +125,7 @@ select {
 
   /* Font Sizes */
   --fs-72: 4.5rem;
+  --fs-48: 3rem;
   --fs-40: 2.5rem;
   --fs-32: 2rem;
   --fs-20: 1.25rem;
@@ -175,6 +180,11 @@ select {
   .label-medium {
     font: var(--fw-bold) var(--fs-16)/var(--flh-150) var(--roboto-flex-family)
   }
+
+  /* Character Typography */
+  .new-number {
+    font: var(--fw-bold) var(--fs-48)/var(--flh-150) var(--roboto-mono-family);
+  }
 }
 
 /* LAYOUT */
@@ -206,6 +216,18 @@ select {
 
 .desktop-only { display: none; }
 .mobile-only { display: initial; }
+.grid {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-self: center;
+  gap: var(--s36);
+}
+
+/* General Layout Styles */
+#draw-numbers-wrapper {
+  margin-top: var(--s48);
+  margin-bottom: var(--s70);
+}
 
 header {
   margin-bottom: --s;
@@ -228,6 +250,7 @@ form {
     }
   }
 }
+
 
 
 /* COMPONENTS */

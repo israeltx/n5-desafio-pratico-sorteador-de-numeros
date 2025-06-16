@@ -17,7 +17,9 @@ const numbers_qty = document.getElementById('numeros')
 const from_number = document.getElementById('de')
 const to_number = document.getElementById('ate')
 
-console.log(fieldset);
+
+
+
 
 // FUNCTIONALITY
 // Functions
