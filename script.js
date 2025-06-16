@@ -21,7 +21,6 @@ const to_number = document.getElementById('ate')
 const draw_numbers_wrapper = document.getElementById('draw-numbers-wrapper')
 
 
-
 // FUNCTIONALITY
 // Functions
 
@@ -61,9 +60,45 @@ function getRandomNumbers(min, max) {
   // Get values from inputs range
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+// Generate X amount of random numbers
+function getXAmountOfRandomNumbers() {
+  
+  // Check if the toggle button enabled
+  const isToggleButtonOn = getToogleButtonState();
+
+  // Generate the amount of numbers specified in the "numeros" field
+  // Store the values
+  let numbers = []
+  // Loop according to the quantity specified
+  for (let i = 0; i < numbers_qty.value; i++) {
+    // Generate a new number
+    let newNumber = getRandomNumbers(Number(from_number.value), Number(to_number.value))
+    // Check if the toggle button is enabled
+    if (isToggleButtonOn) {
+      // Check if the number is already been used
+      if (numbers.includes(newNumber)) {
+        // Reduce 1 iteration since it was not valid
+        i--
+        // Go to the next iteration
+        continue
+      } else {
+        // Add non-repetitive number
+        numbers.push(newNumber)
+      }
+    } else {
+      // Toggle button not enabled, add any number in the range
+      numbers.push(newNumber)
+    }
+  }
+  console.log(numbers);
+  return numbers  
+}
 // Add generated number to the grid
 function addDrawnNumber(drawnNumbersArray) {
   const numbers = drawnNumbersArray
+
+  // Clear grid from previous numbers
+  draw_numbers_wrapper.innerHTML = ''
 
   for (let i = 0; i < numbers.length; i++) {
     // Create new p element
@@ -74,7 +109,6 @@ function addDrawnNumber(drawnNumbersArray) {
     p.innerHTML = numbers[i]
     draw_numbers_wrapper.append(p)
   }
-  console.log('Array', numbers);
 }
 
 
@@ -107,7 +141,7 @@ window.addEventListener('load', () => {
 })
 
 // Set toogle button's function and animation
-toogle_button.addEventListener('click', () => {
+toogle_button.addEventListener('click', (event) => {
   event.preventDefault()
   toogle_button.classList.toggle('toogle-button-is-on')
   toogle_span.classList.toggle('toogle-button-is-on')
@@ -123,40 +157,11 @@ sortear_button.addEventListener('click', (event) => {
     return alert('Insira um valor maior que 0 e numérico')
   }
 
-  // Check if the toggle button enabled
-  const isToggleButtonOn = getToogleButtonState();
-
+  if (sortear_button_p.innerText === 'SORTEAR' || sortear_button_p.innerText === 'SORTEAR NOVAMENTE') {
+      addDrawnNumber(getXAmountOfRandomNumbers())
+  }
   // Swap the header for new text when drawing
   swapHeader();
   // Swap button's inner text and icon
   swapButton();
-
-  // Generate the amount of numbers specified in the "numeros" field
-  // Store the values
-  let numbers = []
-  // Loop according to the quantity specified
-  for (let i = 0; i < numbers_qty.value; i++) {
-    // Generate a new number
-    let newNumber = getRandomNumbers(Number(from_number.value), Number(to_number.value))
-    // Check if the toggle button is enabled
-    if (isToggleButtonOn) {
-      // Check if the number is already been used
-      if (numbers.includes(newNumber)) {
-        // Reduce 1 iteration since it was not valid
-        i--
-        // Go to the next iteration
-        continue
-      } else {
-        // Add non-repetitive number
-        numbers.push(newNumber)
-      }
-    } else {
-      // Toggle button not enabled, add any number in the range
-      numbers.push(newNumber)
-    }
-  }
-
-  // console.log(numbers_qty.value, from_number.value, to_number.value, numbers, isToggleButtonOn);
-  // console.log(numbers);
-  addDrawnNumber(numbers)
 })
