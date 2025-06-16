@@ -218,7 +218,7 @@ select {
 .mobile-only { display: initial; }
 .grid {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: repeat(4, auto);
   justify-self: center;
   gap: var(--s36);
 }
@@ -532,19 +532,16 @@ button {
     grid-area: logo;
     margin: var(--s80) 0; 
   }
-
   #main-header {
     grid-area: main-header;
     width: 510px;
   }
-
   #draw-form {
     grid-area: draw-form;
     grid-row: 2 / 4;
     width: 482px;
     align-self: center;
   }
-
   #questions {
     grid-area: questions;
 
@@ -565,6 +562,10 @@ button {
       'main-header draw-form'
       'questions   draw-form';
     max-width: 1336px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(6, auto);
   }
 
 

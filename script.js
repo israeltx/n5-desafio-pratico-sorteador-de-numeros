@@ -17,7 +17,8 @@ const numbers_qty = document.getElementById('numeros')
 const from_number = document.getElementById('de')
 const to_number = document.getElementById('ate')
 
-
+// Drawn Numbers Area
+const draw_numbers_wrapper = document.getElementById('draw-numbers-wrapper')
 
 
 
@@ -61,6 +62,21 @@ function getToogleButtonState() {
 function getRandomNumbers(min, max) {
   // Get values from inputs range
   return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+// Add generated number to the grid
+function addDrawnNumber(drawnNumbersArray) {
+  const numbers = drawnNumbersArray
+
+  for (let i = 0; i < numbers.length; i++) {
+    // Create new p element
+    let p = document.createElement('p')
+    // Apply class to p
+    p.classList.add('new-number')
+    // Add the drawn number to the new p
+    p.innerHTML = numbers[i]
+    draw_numbers_wrapper.append(p)
+  }
+  console.log('Array', numbers);
 }
 
 
@@ -115,7 +131,6 @@ sortear_button.addEventListener('click', (event) => {
   // Swap button's inner text and icon
   swapButton();
 
-
   // Generate the amount of numbers specified in the "numeros" field
   // Store the values
   let numbers = []
@@ -141,5 +156,7 @@ sortear_button.addEventListener('click', (event) => {
     }
   }
 
-  console.log(numbers_qty.value, from_number.value, to_number.value, numbers, isToggleButtonOn);
+  // console.log(numbers_qty.value, from_number.value, to_number.value, numbers, isToggleButtonOn);
+  // console.log(numbers);
+  addDrawnNumber(numbers)
 })
