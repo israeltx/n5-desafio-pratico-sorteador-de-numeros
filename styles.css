@@ -220,6 +220,7 @@ select {
   display: grid;
   grid-template-columns: repeat(4, auto);
   justify-self: center;
+  text-align: center;
   gap: var(--s36);
 }
 
@@ -564,7 +565,7 @@ button {
   }
 
   .grid {
-    grid-template-columns: repeat(6, auto);
+    grid-template-columns: repeat(5, auto);
   }
 
 
